@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>yost_3_space_driver</name>
+  <name>yost_3_space_api</name>
   <version>0.0.0</version>
-  <description>This is a ROS2 driver for the Yost 3-Space IMU sensor. It uses the Yost 3-Space API, version 3.0.6.</description>
+  <description>This is the Yost 3-Space API v3.0.6 as provided by Yost.</description>
   <maintainer email="jon-mullen@hotmail.com">Jon Mullen</maintainer>
-  <license>GPL</license>
+  <license>See license.txt</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-
-  <depend>sensor_msgs</depend>
-  <depend>yost_3_space_api</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
