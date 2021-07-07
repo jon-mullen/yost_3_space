@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>yost_3_space</name>
+  <name>yost_3_space_driver</name>
   <version>0.0.0</version>
   <description>This is a ROS2 driver for the Yost 3-Space IMU sensor. It uses the Yost 3-Space API, version 3.0.6.</description>
   <maintainer email="jon-mullen@hotmail.com">Jon Mullen</maintainer>
