@@ -17,6 +17,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(yost_3_space_api REQUIRED)
 
@@ -30,9 +31,20 @@ target_include_directories(yost_test PUBLIC
         ${yost_3_space_api_INCLUDE_DIRS})
 target_link_libraries(yost_test ${yost_3_space_api_LIBRARIES} udev pthread)
 
+# DRIVER NODE
+add_executable(yost_3_space_driver_node src/yost_3_space_driver.cpp ${API_Sources})
+ament_target_dependencies(yost_3_space_driver_node rclcpp sensor_msgs yost_3_space_api)
+target_include_directories(yost_3_space_driver_node PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+        "$<INSTALL_INTERFACE:include>"
+        ${yost_3_space_api_INCLUDE_DIRS})
+target_link_libraries(yost_3_space_driver_node ${yost_3_space_api_LIBRARIES} udev pthread)
+
+
 # install
 install(TARGETS
         yost_test
+        yost_3_space_driver_node
         DESTINATION lib/${PROJECT_NAME})
 
 
