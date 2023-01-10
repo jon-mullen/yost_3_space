@@ -1,0 +1,8 @@
+yost_3_space_driver_node:
+  ros__parameters:
+    device_address: /dev/yost
+    frame_id: imu
+    linear_acceleration_stddev: 0.0
+    angular_velocity_stddev: 0.0
+    magnetic_field_stddev: 0.0
+    orientation_stddev: 0.0

@@ -28,7 +28,8 @@ include_directories(include include/serial include/yost include/rapidxml)
 
 add_library(${PROJECT_NAME} SHARED ${API_Sources})
 
-ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
+# ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
+ament_export_interfaces(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 # ament_export_dependencies(some_dependency)
 
 # install(
@@ -49,6 +50,7 @@ install(FILES
   DESTINATION include/yost_3_space_api)
 
 ament_export_include_directories(include)
+ament_export_libraries(${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -109,6 +109,18 @@ bool Yost3SpaceDriver::setCompatibilitySettings()
         all_set_correctly = false;
     }
 
+    // set reference vector mode
+    U32 set_reference_vector_mode_timestamp = 0;
+    TSS_ERROR set_reference_vector_mode_error =
+            tss_sensor_setReferenceVectorMode(this->device_id_, 2, &set_reference_vector_mode_timestamp);
+
+    if (set_axes_error)
+    {
+        RCLCPP_ERROR(this->get_logger(), "Error setting the reference vector mode: %s",
+                     tss_error_string[set_axes_error]);
+        all_set_correctly = false;
+    }
+
     return all_set_correctly;
 
 }
